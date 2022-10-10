@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/personas']">PERSONAS</ion-button><br>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/tareas']">TAREA</ion-button><br>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">ASIGNAR TAREA</ion-button>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">VER TAREA</ion-button>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>GESTION DE TAREAS</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      
+    </ion-content>
   </div>
-</ion-content>
+</ion-app>
+      
+ 
+    <br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>Footer</ion-title>
+      </ion-toolbar>
+    </ion-footer>
