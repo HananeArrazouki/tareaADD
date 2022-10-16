@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <ion-list>
+    <app-persona *ngFor="let persona of getPersonas()" [personas]="persona"></app-persona>
+  </ion-list>
+  <br><br>
   <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>
 </ion-content>

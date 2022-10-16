@@ -6,10 +6,21 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/personas']">PERSONAS</ion-button><br>
-      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/tareas']">TAREA</ion-button><br>
-      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">ASIGNAR TAREA</ion-button>
-      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">VER TAREA</ion-button>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/home']">
+        <ion-icon name="Home" item-start></ion-icon>
+        Home</ion-button><br>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/personas']">
+        <ion-icon name="people-circle-sharp" item-start></ion-icon>
+        PERSONAS</ion-button><br>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/tareas']">
+        <ion-icon name="list-circle-sharp" item-start></ion-icon>
+        TAREA</ion-button><br>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
+        <ion-icon name="receipt-sharp" item-start></ion-icon>
+        ASIGNAR TAREA</ion-button>
+      <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
+        <ion-icon name="clipboard-sharp" item-start></ion-icon>
+        VER TAREA</ion-button>
     </ion-content>
   </ion-menu>
   <div class="ion-page" id="main-content">
