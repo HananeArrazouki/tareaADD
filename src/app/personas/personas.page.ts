@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonasService } from './personas.service'
 import { ActivatedRoute } from '@angular/router';
+import { Persona } from '../interfaces/persona';
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.page.html',
@@ -12,9 +13,12 @@ export class PersonasPage implements OnInit {
 
   ngOnInit() {
   }
-  
+
   getPersonas(){
     return this.servicio.getPersonas();
   }
 
+  addPerson(person: Persona) {
+    this.servicio.addPerson(person)
+  }
 }

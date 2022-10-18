@@ -1,14 +1,11 @@
 <ion-item>
+  
   <ion-avatar class="imagen">
-    <ion-img *ngIf="!persona.img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEVBQELm5+g8Oz14d3g/PUBgX2Ht7u/r7O00MzVubW/k5eY5ODozMjTv8PHd3t8uLC+1trdZWVrJycuxsrOOjo/R0tN2dndLSkyamptlZWbAwcJSUlMrKizX2NmJiYqUlJWfoKEjISSpqap+fn9OTU8gHiGlpabWg+e9AAAF/0lEQVR4nO2cbXeiOhCAASNBEkSwIO9adfv/f+IFk4GEorfr2t0zPfN86OlJxyRPJq9+qLP62eSd4/1sROL8cNj6X/fguyFD/JAhfsgQP2SIHzLEDxnihwzxQ4b4IUP8kCF+yBA/ZIgfMsQPGeKHDPFDhvghQ/yQIX7IED9kiB8yxA8Z4ocM8UOG+CFD/JAhfsgQP2SIHzLEDxnihwzxQ4b4IUP8kCF+yBA/ZIgfMsQPGeKHDPFDhvghQ/yQIX7IED9kiB8yxA8Z4ocM8UOGWPDu/uWxofHPaqdPfCqBWNHjsa/0h6nYebDRHPtUyKzGZwSru4oPDQ+rDbCq4QNJPisZCoUU69VbcezytReLh5ZDbJJ3x+LtUh7iwOzZ1FyeQB21bi5f9yWsnkJstvI5w8KP/BvRsWZgmN3KohOUOJ6sT6nbl3He/3CzUy3vOjJ5OFbhGNvuSzk5di40dwJDdq1Uc/vB0LkedcSMKIyfMnTet66CFw2UBZ0/lIQBWMiyirhrwKOqDpYrFIc997kVm21iqKnZ6T/x89icWN2a47WnBih0F3nWMAZDNzrCNBBvyhAGWZ5tv1t/eLE4a+LO/RTrRhWs6QAM3egDeuxdlKFOqvg2w14xXjJkQeobZlP4bkGxHwxjEKZfW4fNDHvF5qEhn/ECwzGLtqEEQd4vqrTKXPD1958U5QkEb7FpCPOVt97csFeUDwx5tbOoXmEIWbQMg6PudFRtnDiWsXPJtGOUC7syr9Sx/rY7xFLGYlNByVnODd1o39w3jJK+AoP3/Z2F/1uGbnSKZ4bMgS7ljUoDEw1It7MkylQF+x+NPk+8eANVX9ncsFeM7xuuxx1Y7Xh3Bb9mmHFD0TQUR5Uwf2O0EBeqMCqtU5glytzYJ/sK1iqWn8Rk2Oq15u+au4Y15LDZXx9fMr5iyM8rmIt970xDWd26xHfWKogz3WtrYMVRjZN9NsuzKs3iyTBNXFCU7M5O02aaNjq8wHD/foEsnqVpGKgc+7mVLVEo78py0d3nH5a3p5MYGjlM30vdnF9J8X+nxWsMA5nD/rH7ZRh6ypDXViOeOqTdzM6WyrffWRsQc3RHh36CoRSjYipXf8fQCUDR33V8NBTaMLEN8weG/O0Lho4odTFP/5ZhrwiHl7JS67BV1her18HyLN2rUvuc9Eo9S4d5Phk6AtYitwcRDLeaNnyZoRNsrAuXtdOkjfUp5a32xxHRGStuit0v7DTDGIjEytbd87CpXrGXquPUVlSzVPfa74zNtPlYPi0O+mDYG8MhN7qCwtxpblkWtal4/zxU75hnX8CW4TRzRkMHrvp+oV+FLAj05ZNns4uUTni/koU6pZmIO5j6jnHip/q+dt0ad9e5oWAm4skX8MywP5+nYVWGooN7V/Z2HSZNUmxh1y1njbJ6XMmnZIg9dHDD8ws1SyxDxztMijNDf1MnFu0f3UtHw2HmQJtw896NV+3IbVt3fElFn99P4gI3bz7EhhF8lKeqfzPDfuq1UN18p/Ejmz+7eU+GxrDC+zDeTS8iA3WHnSEvi7F+KqzX02joeAwujN/7PjQMp2ENx5g3zuft+eFl8QUclDCHJzj/gEf+J8N+qerr+jcZsl/a0Nj9PKHOgnD8fiU4nF3zmwnubwshFit0vODY2rF8fx2F3uHWZnShSVVgfavRi5cFnzRkSaUmuZlEUYSqMC3hHGIB66pWfWkV8ey8EvffMo6Qm3PGVWy03XWH6Vsrb6dXV3WYhqRrVVk27JasrNxwCdd9cpb2e/+AnRChCq1zVkgp6s0qL6+BDO6fTarTfci1zC+b2us/ZVejmlsog0q9YJGmevIF/Fsw+5vcl8V+iWdfwD8BMsQPGeKHDPFDhvghQ/yQIX7IED9kiB8yxA8Z4ocM8UOG+CFD/JAhfsgQP2SIHzLEDxnihwzxQ4b4IUP8kCF+yBA/ZIgfMsQPGeKHDPFDhvghQ/yQIX7IED9kiB8yxA8Z4ocM8UOG+CFD/JAhfsgQP2SIHzLEDxnihwzxQ4b4IUP8kCF+yBA/ZIgfMsQPW/8Hc6VjJIivw0IAAAAASUVORK5CYII="></ion-img>
+    <ion-img *ngIf="!persona.img" src="https://drive.google.com/uc?export=view&id=1nbdkul4gsWioCH8qloyiHXZ74J6ZiQrA"></ion-img>
     <ion-img *ngIf="persona.img" [src]="persona.img"></ion-img>
   </ion-avatar>
-  <ion-label><span class="colores"><u>Identificador: </u></span>{{persona.id}} <br>  
-  <span class="colores"><u>Nombre: </u></span> {{persona.nombre}} <br>
-  <span class="colores"><u>Apellido: </u></span> {{persona.apellido}} <br>
-  <span class="colores"><u>Alías: </u></span> {{persona.apodo}} <br> 
-  <span class="colores"><u>Edad: </u></span> {{persona.edad}}</ion-label>
+  <ion-label>{{persona.id}}: {{persona.nombre}}, {{persona.apellido}}</ion-label>
   
   <ion-button>Modificar</ion-button>
-  <ion-button>Borrar</ion-button>
+  <ion-button (onclick)="deletePersonById(persona.id)">Borrar</ion-button>
 </ion-item>

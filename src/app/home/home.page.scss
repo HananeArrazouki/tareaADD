@@ -7,18 +7,19 @@ ion-menu::part(container) {
 
   box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
 }
-
 #button-home {
+  width:15em;  
+}
+.menuu {
   text-align: center;
-  margin-left: 5%;
-  width:15em;
 }
 .title_home {
-  background-image: url('https://media.istockphoto.com/id/1279243899/es/v%C3%ADdeo/animaci%C3%B3n-de-fondo-limpia-suave-y-brillante-dise%C3%B1o-abstracto-de-movimiento-hermoso-c%C3%ADrculo.jpg?b=1&s=640x640&k=20&c=n10BtGdGlImGQ_k_I9WVpszcuGIH4GgkpHxk_YM7acY=');
-  height: 100px;
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-textura-papel-viejo-estilo-vintage-pagina-periodico-espacio-texto-pueden-usar-diseno-papel-tapiz_218148-526.jpg?w=2000');
+  height: 5rem;
   border-radius: 20px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: rgb(50, 107, 107);
+  background-repeat: no-repeat;
 }

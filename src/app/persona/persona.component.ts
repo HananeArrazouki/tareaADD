@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Persona, PersonasService } from '../personas/personas.service';
+import { PersonasService } from '../personas/personas.service';
+import { Persona } from '../interfaces/persona';
 
 @Component({
   selector: 'app-persona',
@@ -21,7 +22,12 @@ export class PersonaComponent implements OnInit {
   constructor(private servicio : PersonasService) { }
 
   ngOnInit() {}
+  
   getPersonas(){
     return this.servicio.getPersonas();
+  }
+  deletePersonById(id: number){
+    console.log(id)
+    return this.servicio.deletePersonById(id)
   }
 }

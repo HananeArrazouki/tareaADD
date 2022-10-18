@@ -4,7 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content>  
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-list>
     <app-persona *ngFor="let persona of getPersonas()" [personas]="persona"></app-persona>
   </ion-list>
