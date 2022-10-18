@@ -31,4 +31,9 @@ export class PersonasService {
   deletePersonById(id: number){
     this._personas = this._personas.filter(p => p.id != id)
   }
+  actualizarPerson(persona: Persona){
+    var personaActualizada = this._personas.find(p => p.id == persona.id)
+    personaActualizada.nombre = persona.nombre
+    personaActualizada.apellido = persona.apellido
+  }
 }

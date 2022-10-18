@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PersonasService } from './personas.service'
 import { ActivatedRoute } from '@angular/router';
 import { Persona } from '../interfaces/persona';
+import { ModalController } from '@ionic/angular';
+import { PersonFormComponent } from '../components/form-person/form-person.component';
+
+
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.page.html',
@@ -9,7 +13,7 @@ import { Persona } from '../interfaces/persona';
 })
 export class PersonasPage implements OnInit {
    private personas = []
-  constructor(private servicio : PersonasService) { }
+  constructor(private servicio : PersonasService, private modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -21,4 +25,5 @@ export class PersonasPage implements OnInit {
   addPerson(person: Persona) {
     this.servicio.addPerson(person)
   }
+
 }

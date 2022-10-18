@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PersonasService } from '../personas/personas.service';
 import { Persona } from '../interfaces/persona';
+import { AlertController, ModalController } from '@ionic/angular';
+import { PersonFormComponent } from '../components/form-person/form-person.component';
 
 @Component({
   selector: 'app-persona',
@@ -19,7 +21,7 @@ export class PersonaComponent implements OnInit {
     return this._persona;
   }
 
-  constructor(private servicio : PersonasService) { }
+  constructor(private servicio : PersonasService, private alertController: AlertController, private modalController: ModalController) { }
 
   ngOnInit() {}
   
@@ -29,5 +31,57 @@ export class PersonaComponent implements OnInit {
   deletePersonById(id: number){
     console.log(id)
     return this.servicio.deletePersonById(id)
+  }
+
+  async onDelete(persona: Persona) {
+    const alert = await this.alertController.create({
+      header: '¿Are you sure you want to delete ' + persona.nombre + '?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+          },
+        },
+        {
+          text: 'Yes',
+          role: 'confirm',
+          handler: () => {
+            this.deletePersonById(persona.id)
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+  async presentPersonForm(person:Persona){
+    const modalController = await this.modalController.create({
+      component: PersonFormComponent,
+      componentProps:{
+        person:person
+      }
+    });
+    modalController.present();
+    modalController.onDidDismiss().then(result => {
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.servicio.addPerson(result.data.person);
+            break;
+          case 'Edit':
+            this.servicio.actualizarPerson(result.data.person);
+            break;
+          default:
+        }
+      }
+    });
+  }
+
+  onNewPerson(){
+    this.presentPersonForm(null)
+  }
+  onEditPerson(persona: Persona){
+    this.presentPersonForm(persona)
   }
 }

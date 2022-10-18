@@ -6,6 +6,6 @@
   </ion-avatar>
   <ion-label>{{persona.id}}: {{persona.nombre}}, {{persona.apellido}}</ion-label>
   
-  <ion-button>Modificar</ion-button>
-  <ion-button (onclick)="deletePersonById(persona.id)">Borrar</ion-button>
+  <ion-button (click)="onEditPerson(persona)">Modificar</ion-button>
+  <ion-button (click)="onDelete(persona)">Borrar</ion-button>
 </ion-item>

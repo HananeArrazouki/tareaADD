@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{mode=="New"?"Add person":"Modify person"}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">nombre</ion-label>
+      <ion-input type="text" placeholder="Enter your name" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Surname</ion-label>
+      <ion-input type="text" placeholder="Enter your surname" formControlName="apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nickname</ion-label>
+      <ion-input type="text" placeholder="Enter your nickname" formControlName="apodo"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">Actualizar</ion-button>
+    <!-- {{mode=="New"?"Add":"Update"}} -->
+  </form>
+</ion-content>
