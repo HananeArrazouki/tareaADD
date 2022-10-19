@@ -25,5 +25,32 @@ export class PersonasPage implements OnInit {
   addPerson(person: Persona) {
     this.servicio.addPerson(person)
   }
+  async presentPersonForm(persona:Persona){
+    const modalController = await this.modalController.create({
+      component: PersonFormComponent,
+      componentProps:{
+        persona:persona
+      }
+    });
+    modalController.present();
+    modalController.onDidDismiss().then(result => {
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.servicio.addPerson(result.data.persona);
+            break;
+          case 'Edit':
+            this.servicio.actualizarPerson(result.data.persona);
+            break;
+          default:
+        }
+      }
+    });
+  }
+
+  
+  onNewPerson(){
+    this.presentPersonForm(null)
+  }
 
 }

@@ -20,7 +20,11 @@
       <ion-label position="floating">Nickname</ion-label>
       <ion-input type="text" placeholder="Enter your nickname" formControlName="apodo"></ion-input>
     </ion-item>
-    <ion-button [disabled]="!form.valid" type="submit">Actualizar</ion-button>
-    <!-- {{mode=="New"?"Add":"Update"}} -->
+    <ion-item>
+      <ion-label position="floating">edad</ion-label>
+      <ion-input type="text" placeholder="Enter your nickname" formControlName="edad"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="New"?"Añadir":"Modificar"}}</ion-button>
+  
   </form>
 </ion-content>

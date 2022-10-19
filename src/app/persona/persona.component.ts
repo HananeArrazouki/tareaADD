@@ -55,11 +55,11 @@ export class PersonaComponent implements OnInit {
 
     await alert.present();
   }
-  async presentPersonForm(person:Persona){
+  async presentPersonForm(persona:Persona){
     const modalController = await this.modalController.create({
       component: PersonFormComponent,
       componentProps:{
-        person:person
+        persona:persona
       }
     });
     modalController.present();
@@ -67,10 +67,10 @@ export class PersonaComponent implements OnInit {
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.servicio.addPerson(result.data.person);
+            this.servicio.addPerson(result.data.persona);
             break;
           case 'Edit':
-            this.servicio.actualizarPerson(result.data.person);
+            this.servicio.actualizarPerson(result.data.persona);
             break;
           default:
         }
@@ -78,9 +78,6 @@ export class PersonaComponent implements OnInit {
     });
   }
 
-  onNewPerson(){
-    this.presentPersonForm(null)
-  }
   onEditPerson(persona: Persona){
     this.presentPersonForm(persona)
   }

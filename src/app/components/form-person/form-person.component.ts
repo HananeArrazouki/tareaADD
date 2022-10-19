@@ -26,10 +26,7 @@ export class PersonFormComponent {
     }
   }
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private modalController: ModalController
-  ) {
+  constructor(private formBuilder: FormBuilder, private modalController: ModalController) {
     this.form = this.formBuilder.group({
       id: [null],
       nombre: ['', [Validators.required]],
