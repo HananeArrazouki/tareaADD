@@ -1,0 +1,18 @@
+<ion-item>
+  
+  <ion-avatar class="imagen">
+    <ion-img *ngIf="!tarea.img" src="https://drive.google.com/uc?export=view&id=1i9nM4zsSBiIs9kyFFCBef9Qx0Zb8LuHl"></ion-img>
+    <ion-img *ngIf="tarea.img" [src]="tarea.img"></ion-img>
+  </ion-avatar>
+
+  <ion-label>{{tarea.id}}: {{tarea.nombre}}, {{tarea.tiempo}}</ion-label>
+
+  <ion-button (click)="onDeleteTarea(tarea)" expand="block" fill="clear" shape="round">
+    <ion-icon name="trash-sharp">Modificar</ion-icon>
+  </ion-button>
+  
+  <ion-button (click)="onEditTarea(tarea)" expand="block" fill="clear" shape="round">
+    <ion-icon name="create-sharp">Borrar</ion-icon>
+  </ion-button>
+  
+</ion-item>

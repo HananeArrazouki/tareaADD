@@ -62,7 +62,9 @@ export class PersonaComponent implements OnInit {
         persona:persona
       }
     });
+
     modalController.present();
+    
     modalController.onDidDismiss().then(result => {
       if(result && result.data){
         switch(result.data.mode){

@@ -5,6 +5,16 @@
 </ion-header>
 
 <ion-content>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div>
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="onNewTarea()">
+        <ion-icon name="add" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div><br><br><br>
+  <ion-list>
+    <app-tarea *ngFor="let tarea of getListaTarea()" [tarea]="tarea"></app-tarea>
+  </ion-list>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
   <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>
 </ion-content>
