@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,19 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'personas',
-    loadChildren: () => import('./personas/personas.module').then( m => m.PersonasPageModule)
+    loadChildren: () => import('./pages/personas/personas.module').then( m => m.PersonasPageModule)
   },
   {
     path: 'tareas',
-    loadChildren: () => import('./tareas/tareas.module').then( m => m.TareasPageModule)
+    loadChildren: () => import('./pages/tareas/tareas.module').then( m => m.TareasPageModule)
   },
   {
     path: 'asignar-tarea',
-    loadChildren: () => import('./asignar-tarea/asignar-tarea.module').then( m => m.AsignarTareaPageModule)
+    loadChildren: () => import('./pages/asignar-tarea/asignar-tarea.module').then( m => m.AsignarTareaPageModule)
   },
   {
     path: 'ver-tarea-asignada',
-    loadChildren: () => import('./ver-tarea-asignada/ver-tarea-asignada.module').then( m => m.VerTareaAsignadaPageModule)
+    loadChildren: () => import('./pages/ver-tarea-asignada/ver-tarea-asignada.module').then( m => m.VerTareaAsignadaPageModule)
   },
 ];
 

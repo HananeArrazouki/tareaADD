@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonasService } from './personas.service'
+import { PersonasService } from '../../core/services/personas.service'
 import { ActivatedRoute } from '@angular/router';
-import { Persona } from '../interfaces/persona';
+import { Persona } from '../../core/interfaces/persona';
 import { ModalController } from '@ionic/angular';
-import { PersonFormComponent } from '../components/form-person/form-person.component';
+import { PersonFormComponent } from '../../core/components/form-person/form-person.component';
 
 
 @Component({

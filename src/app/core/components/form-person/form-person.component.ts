@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Persona } from 'src/app/interfaces/persona';
+import { Persona } from 'src/app/core/interfaces/persona';
 
 
 @Component({

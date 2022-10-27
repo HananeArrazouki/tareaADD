@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PersonasService } from '../personas/personas.service';
-import { Persona } from '../interfaces/persona';
+import { PersonasService } from '../../services/personas.service';
+import { Persona } from '../../interfaces/persona';
 import { AlertController, ModalController } from '@ionic/angular';
-import { PersonFormComponent } from '../components/form-person/form-person.component';
+import { PersonFormComponent } from '../form-person/form-person.component';
 
 @Component({
   selector: 'app-persona',

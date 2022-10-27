@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Tarea } from 'src/app/interfaces/tarea';
+import { Tarea } from 'src/app/core/interfaces/tarea';
 
 @Component({
   selector: 'app-form-tarea',

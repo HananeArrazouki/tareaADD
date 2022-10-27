@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { TareasPageRoutingModule } from './tareas-routing.module';
 import { TareasPage } from './tareas.page';
-import { TareaComponent } from '../tarea/tarea.component';
-import { FormTareaComponent } from '../components/form-tarea/form-tarea.component';
+import { TareaComponent } from '../../core/components/tarea/tarea.component';
+import { FormTareaComponent } from '../../core/components/form-tarea/form-tarea.component';
 
 @NgModule({
   imports: [

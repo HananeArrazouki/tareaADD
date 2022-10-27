@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { PersonasPageRoutingModule } from './personas-routing.module';
 import { PersonasPage } from './personas.page';
-import { PersonaComponent } from '../persona/persona.component';
-import { PersonFormComponent } from '../components/form-person/form-person.component';
+import { PersonaComponent } from '../../core/components/persona/persona.component';
+import { PersonFormComponent } from '../../core/components/form-person/form-person.component';
 
 
 @NgModule({

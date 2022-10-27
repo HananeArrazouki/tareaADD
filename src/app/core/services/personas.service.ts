@@ -20,7 +20,7 @@ export class PersonasService {
  public getPersonas():Persona[] {
     return this._personas;
  }
- public getPersonasById(id:number): Persona {
+ public getPersonaById(id:number): Persona {
     return this._personas[id];
  }
 

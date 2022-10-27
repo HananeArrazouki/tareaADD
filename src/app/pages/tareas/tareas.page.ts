@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-import { FormTareaComponent } from '../components/form-tarea/form-tarea.component';
-import { Tarea } from '../interfaces/tarea';
-import { TareaService } from './tareas.service';
+import { FormTareaComponent } from '../../core/components/form-tarea/form-tarea.component';
+import { Tarea } from '../../core/interfaces/tarea';
+import { TareaService } from '../../core/services/tareas.service';
 
 @Component({
   selector: 'app-tareas',

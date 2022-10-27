@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Tarea } from '../interfaces/tarea';
-import { TareaService } from '../tareas/tareas.service';
+import { Tarea } from '../../interfaces/tarea';
+import { TareaService } from '../../services/tareas.service';
 import { AlertController, ModalController } from '@ionic/angular';
-import { FormTareaComponent } from '../components/form-tarea/form-tarea.component';
+import { FormTareaComponent } from '../form-tarea/form-tarea.component';
 
 @Component({
   selector: 'app-tarea',

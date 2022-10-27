@@ -22,7 +22,7 @@ export class TareaService {
       return this._listaTarea;
    }
 
-    public getPersonasById(id:number): Tarea {
+    public getTareaById(id:number): Tarea {
       return this._listaTarea[id];
     }
 
