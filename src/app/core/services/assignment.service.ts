@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Assignment } from '../interfaces/assignment';
 import * as moment from 'moment';
- 
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +8,18 @@ import * as moment from 'moment';
 export class AssignmentService {
   momentjs:any = moment;
   
-
     private _assignments: Assignment[] = [
       {
         id: 1, 
         personaId: 1, 
-        tareaId: 1, 
+        tareaId:1, 
         crearAt: this.momentjs().toISOString(), 
         dateTime: this.momentjs().add(1, 'days').toISOString()
       },
       {
         id: 2, 
         personaId: 2, 
-        tareaId: 2, 
+        tareaId: 1, 
         crearAt: this.momentjs().toISOString(), 
         dateTime: this.momentjs().add(1, 'days').toISOString()
       },

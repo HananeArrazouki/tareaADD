@@ -7,10 +7,8 @@
 <ion-content>
   <app-assignments  
   *ngFor="let assignment of getAssignments()" 
-  [assignment]="assignment" 
-  [persona]="getPersonaById(assignment.personaId)" 
-  [tarea]="getTareaById(assignment.tareaId)" ></app-assignments>
+  [assignment]="assignment" ></app-assignments>
   
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>
 </ion-content>

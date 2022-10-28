@@ -18,10 +18,16 @@ export class AssignmentsComponent implements OnInit {
 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() assignment: Assignment;
-  @Input() persona: Persona;
-  @Input() tarea: Tarea;
+  _assignment: Assignment;
 
+  @Input() set assignment(a:Assignment){
+    this._assignment = a;
+  }
+
+  get assignment(){
+    return this._assignment;
+  }
+  
   isLowResolution = lowres;
   constructor(private personas: PersonasService, private tareasServicio: TareaService, private asignaciones: AssignmentService){
   }
@@ -43,7 +49,7 @@ export class AssignmentsComponent implements OnInit {
     return undefined;
   }
 
-  onEditClick(slide:IonItemSliding){
+  onEditClic(slide:IonItemSliding){
     slide.close();
     this.onEdit.emit(this.assignment);
   }

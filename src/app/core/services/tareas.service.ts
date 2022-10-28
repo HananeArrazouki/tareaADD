@@ -7,7 +7,12 @@ import { Tarea } from '../interfaces/tarea';
 export class TareaService {
   
     private _listaTarea: Tarea[] = [
-      {id:1, nombre:'Tarea1', tiempo:100, img:'https://drive.google.com/uc?export=view&id=1sCLNSUDkn0lg_r828_Vq-JgcUvD064PF'},
+      {
+        id:1, 
+        nombre:'Tarea1', 
+        tiempo:100, 
+        img:'https://drive.google.com/uc?export=view&id=1sCLNSUDkn0lg_r828_Vq-JgcUvD064PF'
+      },
       {id:2, nombre:'Tarea2', tiempo:200, img:'https://drive.google.com/uc?export=view&id=1tUXTrbdqY573NuJP4tGnmRxb-U2hZ7Zn'},
       {id:3, nombre:'Tarea3', tiempo:300},
       {id:4, nombre:'Tarea4', tiempo:400},
@@ -23,7 +28,7 @@ export class TareaService {
    }
 
     public getTareaById(id:number): Tarea {
-      return this._listaTarea[id];
+      return this._listaTarea.find(t=>t.id==id);
     }
 
   addTarea(tarea: Tarea) {

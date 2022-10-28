@@ -1,23 +1,24 @@
 <ion-item>
   
   <ion-avatar class="imagen">
-    <ion-img *ngIf="!persona.img" src="https://drive.google.com/uc?export=view&id=1nbdkul4gsWioCH8qloyiHXZ74J6ZiQrA"></ion-img>
-    <ion-img *ngIf="persona.img" [src]="persona.img"></ion-img>
+    <ion-img *ngIf="!persona?.img" src="https://drive.google.com/uc?export=view&id=1nbdkul4gsWioCH8qloyiHXZ74J6ZiQrA"></ion-img>
+    <ion-img *ngIf="persona?.img" [src]="persona.img"></ion-img>
   </ion-avatar>
 
   <ion-avatar class="imagen">
-   <ion-img *ngIf="!tarea.img" src="https://drive.google.com/uc?export=view&id=1i9nM4zsSBiIs9kyFFCBef9Qx0Zb8LuHl"></ion-img>
-   <ion-img *ngIf="tarea.img" [src]="tarea.img"></ion-img>
+   <ion-img *ngIf="!tarea?.img" src="https://drive.google.com/uc?export=view&id=1i9nM4zsSBiIs9kyFFCBef9Qx0Zb8LuHl"></ion-img>
+   <ion-img *ngIf="tarea?.img" [src]="tarea.img"></ion-img>
  </ion-avatar>
  
-  <ion-label>{{persona.id}}: {{persona.nombre}}, {{persona.apellido}}</ion-label>
-  <ion-label>{{tarea.id}}: {{tarea.nombre}}, {{tarea.tiempo}}</ion-label>
+  <ion-label>{{getPersona()?.id}}: {{getPersona()?.nombre}}, {{getPersona()?.apellido}}</ion-label>
+  <ion-label>{{getTarea()?.id}}: {{getTarea()?.nombre}}, {{getTarea()?.tiempo}}</ion-label>
+  <ion-label class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
 
-  <ion-button  expand="block" fill="clear" shape="round">
+  <ion-button (click)="onEditClic(sliding)" expand="block" fill="clear" shape="round">
     <ion-icon name="trash-sharp">Modificar</ion-icon>
   </ion-button>
   
-  <ion-button   expand="block" fill="clear" shape="round">
+  <ion-button  (click)="onDeleteClick(sliding)" expand="block" fill="clear" shape="round">
     <ion-icon name="create-sharp">Borrar</ion-icon>
   </ion-button>
   
