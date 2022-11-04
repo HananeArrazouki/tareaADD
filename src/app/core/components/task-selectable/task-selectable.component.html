@@ -1,0 +1,29 @@
+<ion-accordion-group #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="taskSelected != null">
+        <ion-avatar slot="start" *ngIf="!taskSelected.img">
+          <img src="https://drive.google.com/uc?export=view&id=1i9nM4zsSBiIs9kyFFCBef9Qx0Zb8LuHl">
+        </ion-avatar>
+        <ion-avatar slot="start" *ngIf="taskSelected.img">
+          <img [src]="taskSelected.img" />
+        </ion-avatar>
+        <ion-label>{{taskSelected?.nombre}}</ion-label>
+        <ion-label *ngIf="!taskSelected">Select a task</ion-label>
+      </ng-container>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let task of getTasksList()" button detail (click)="onTaskClick(task, accordion)">
+          <ion-avatar slot="start" *ngIf="!task.img">
+            <img src="https://drive.google.com/uc?export=view&id=1i9nM4zsSBiIs9kyFFCBef9Qx0Zb8LuHl">
+          </ion-avatar>
+          <ion-avatar slot="start" *ngIf="task.img">
+            <img [src]="task.img" />
+          </ion-avatar>
+          <ion-label>{{task.nombre}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

@@ -1,0 +1,29 @@
+<ion-accordion-group #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ng-container *ngIf="personSelected != null">
+        <ion-avatar slot="start" *ngIf="!personSelected.img">
+          <img src="https://drive.google.com/uc?export=view&id=1nbdkul4gsWioCH8qloyiHXZ74J6ZiQrA">
+        </ion-avatar>
+        <ion-avatar slot="start" *ngIf="personSelected.img">
+          <img [src]="personSelected.img" />
+        </ion-avatar>
+        <ion-label>{{personSelected?.nombre}} {{personSelected?.apellido}}</ion-label>
+        <ion-label *ngIf="!personSelected">Select a person</ion-label>
+      </ng-container>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let person of getPeopleList()" button detail (click)="onPersonClick(person, accordion)">
+          <ion-avatar slot="start" *ngIf="!person.img">
+            <img src="https://drive.google.com/uc?export=view&id=1nbdkul4gsWioCH8qloyiHXZ74J6ZiQrA">
+          </ion-avatar>
+          <ion-avatar slot="start" *ngIf="person.img">
+            <img [src]="person.img" />
+          </ion-avatar>
+          <ion-label>{{person.nombre}} {{person.apellido}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

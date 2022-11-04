@@ -61,15 +61,16 @@ export class AssignmentService {
     }
 
     getAssignmentByPersonId(personaId: number) {
-      return this._assignments.find(a => a.personaId = personaId)
+      return this._assignments.find(a => a.personaId == personaId)
     }
 
     deleteAssignmentById(id: number) {
-      this._assignments.filter(a => a.id != id)
+      this._assignments = this._assignments.filter(a => a.id != id);
     }
 
     addAssignment(assignment: Assignment) {
       assignment.id = this.id++;
+      assignment.crearAt = this.momentjs().toISOString();
       this._assignments.push(assignment);
     }
 

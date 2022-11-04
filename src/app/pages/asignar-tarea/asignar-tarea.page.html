@@ -5,9 +5,16 @@
 </ion-header>
 
 <ion-content>
+  <div>
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="onNewAssignment()">
+        <ion-icon name="add" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div><br><br><br><br>
   <app-assignments  
   *ngFor="let assignment of getAssignments()" 
-  [assignment]="assignment" ></app-assignments>
+  [assignment]="assignment" (onDelete)="onDeleteAssignment(assignment)" (onEdit)="onEditAssignment(assignment)"></app-assignments>
   
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>

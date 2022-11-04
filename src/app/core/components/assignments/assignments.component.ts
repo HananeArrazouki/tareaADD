@@ -14,7 +14,7 @@ import { isLowResolution as lowres }  from '../../utils/screen';
   templateUrl: './assignments.component.html',
   styleUrls: ['./assignments.component.scss'],
 })
-export class AssignmentsComponent implements OnInit {
+export class AssignmentsComponent {
 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
@@ -29,10 +29,12 @@ export class AssignmentsComponent implements OnInit {
   }
   
   isLowResolution = lowres;
-  constructor(private personas: PersonasService, private tareasServicio: TareaService, private asignaciones: AssignmentService){
-  }
+  constructor(
+    private personas: PersonasService, 
+    private tareasServicio: TareaService, 
+    private asignaciones: AssignmentService)
+    {  }
 
-  ngOnInit() {}
 
   getTarea():Tarea{
     var tareaId = this.assignment.tareaId;
@@ -42,14 +44,13 @@ export class AssignmentsComponent implements OnInit {
   }
 
   getPersona():Persona{
-    console.log(new Date().toISOString());
     var personaId = this.assignment.personaId;
     if(personaId)
       return this.personas.getPersonaById(personaId);
     return undefined;
   }
 
-  onEditClic(slide:IonItemSliding){
+  onEditClick(slide:IonItemSliding){
     slide.close();
     this.onEdit.emit(this.assignment);
   }
