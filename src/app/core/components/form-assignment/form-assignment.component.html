@@ -1,17 +1,18 @@
 <ion-header>
-   <ion-toolbar>
-     <ion-title>{{mode=="New"?"Add assignment":"Modify assignment"}}</ion-title>
-     <ion-buttons slot="end">
-       <ion-button (click)="onDismiss(null)">Close</ion-button>
-     </ion-buttons>
-   </ion-toolbar>
- </ion-header>
- 
- <ion-content class="ion-padding">
-   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-     <app-person-selectable formControlName="personId"></app-person-selectable>
-     <app-task-selectable formControlName="taskId"></app-task-selectable>
-     <ion-button [disabled]="!form.valid" type="submit">{{mode=="New"?"Añadir":"Modificar"}}</ion-button>
-   
-   </form>
- </ion-content>
+    <ion-toolbar>
+        <ion-title>{{mode=="New"?"Add assignment":"Modify assignment"}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="onDismiss(null)">Close</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+        <app-person-selectable formControlName="personId"></app-person-selectable>
+        <app-task-selectable formControlName="taskId"></app-task-selectable>
+        <app-date-time-selectable formControlName="dateTime"></app-date-time-selectable>
+        <ion-button [disabled]="!form.valid" type="submit">{{mode=="New"?"Añadir":"Modificar"}}</ion-button>
+
+    </form>
+</ion-content>
