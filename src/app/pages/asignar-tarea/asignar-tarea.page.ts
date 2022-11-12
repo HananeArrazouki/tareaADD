@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormAssignmentComponent } from 'src/app/core/components/form-assignment/form-assignment.component';
 import { Assignment } from 'src/app/core/interfaces/assignment';
@@ -21,30 +21,23 @@ export class AsignarTareaPage {
     private modalController: ModalController) { }
 
   getAssignments(){
-    return this.assignmentService.getAssignments();
+    return this.assignmentService.listaAsignaciones$;
   }
-  getPersonaById(id: number){
+
+  getAssignmentById(id : number){
+    return this.assignmentService.getAssignmentById(id);
+  }
+
+  getPersonAssignedById(id: number){
     return this.personaService.getPersonaById(id)
   }
 
-  getTareaById(id: number){
+  getTaskAssignedById(id: number){
     return this.tareaService.getTareaById(id)
   }
 
   deleteAssignmentByID(id: number) {
     this.assignmentService.deleteAssignmentById(id);
-  }
-
-  onNewAssignment() {
-    this.presentAssignmentForm(null);
-  }
-
-  onEditAssignment(assignment: Assignment) {
-    this.presentAssignmentForm(assignment);
-  }
-
-  onDeleteAssignment(assignment: Assignment) {
-    this.onDeleteAlert(assignment);
   }
 
   async presentAssignmentForm(assignment: Assignment) {
@@ -70,7 +63,7 @@ export class AsignarTareaPage {
     });
   }
 
-  async onDeleteAlert(assignment: Assignment) {
+  async onDelete(assignment: Assignment) {
     const alert = await this.alertController.create({
       mode: 'ios',
       header: '¿Are you sure you want to delete this assignment?',
@@ -91,5 +84,17 @@ export class AsignarTareaPage {
       ],
     });
     await alert.present();
+  }
+
+  onNewAssignment() {
+    this.presentAssignmentForm(null);
+  }
+
+  onEditAssignment(assignment: Assignment) {
+    this.presentAssignmentForm(assignment);
+  }
+
+  onDeleteAssignment(assignment: Assignment) {
+    this.onDelete(assignment);
   }
 }

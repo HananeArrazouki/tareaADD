@@ -13,7 +13,7 @@
     </ion-fab>
   </div><br><br><br><br>
   <app-assignments  
-  *ngFor="let assignment of getAssignments()" 
+  *ngFor="let assignment of (getAssignments() | async)" 
   [assignment]="assignment" (onDelete)="onDeleteAssignment(assignment)" (onEdit)="onEditAssignment(assignment)"></app-assignments>
   
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

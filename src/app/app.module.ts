@@ -15,14 +15,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent, 
-                MainMenuComponent, 
-                FormAssignmentComponent, 
-                PersonSelectableComponent,
-                TaskSelectableComponent,
-                DateTimeSelectableComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), FormsModule, ReactiveFormsModule, AppRoutingModule, HomePageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  declarations: [
+    AppComponent, 
+    MainMenuComponent, 
+    ],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,],
+  providers: [{ 
+    provide: RouteReuseStrategy, 
+    useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

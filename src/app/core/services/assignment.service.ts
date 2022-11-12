@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Assignment } from '../interfaces/assignment';
 import * as moment from 'moment';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,9 @@ export class AssignmentService {
       },]
       
     constructor() { }
+    
+    private _assignemtSubject: BehaviorSubject<Assignment[]> = new BehaviorSubject(this._assignments)
+    public listaAsignaciones$ = this._assignemtSubject.asObservable();
     id: number = this._assignments.length+1;
 
     getAssignments(){
@@ -66,12 +70,14 @@ export class AssignmentService {
 
     deleteAssignmentById(id: number) {
       this._assignments = this._assignments.filter(a => a.id != id);
+      this._assignemtSubject.next(this._assignments)
     }
 
     addAssignment(assignment: Assignment) {
       assignment.id = this.id++;
       assignment.crearAt = this.momentjs().toISOString();
       this._assignments.push(assignment);
+      this._assignemtSubject.next(this._assignments)
     }
 
     updateAssignment(assignment: Assignment){
@@ -82,5 +88,6 @@ export class AssignmentService {
         _assignment.crearAt = assignment.crearAt;
         _assignment.dateTime = assignment.dateTime;
     }
+    this._assignemtSubject.next(this._assignments)
   }
 }

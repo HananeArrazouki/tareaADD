@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="title_tarea"><span><strong><u>Tareas</u></strong></span></ion-title>
+    <ion-title class="title_tarea">Tareas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
     </ion-fab>
   </div><br><br><br>
   <ion-list>
-    <app-tarea *ngFor="let tarea of getListaTarea()" [tarea]="tarea"></app-tarea>
+    <app-tarea *ngFor="let tarea of (getListaTarea() | async)" [tarea]="tarea"></app-tarea>
   </ion-list>
   <br><br><br><br><br><br><br><br><br><br><br><br><br>
   <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>

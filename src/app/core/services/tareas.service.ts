@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Tarea } from '../interfaces/tarea';
 
 @Injectable({
@@ -21,6 +22,8 @@ export class TareaService {
 
     constructor() { }
 
+    private tareasSubject : BehaviorSubject<Tarea[]> =  new BehaviorSubject(this._listaTarea)
+    public listaTareas$ =  this.tareasSubject.asObservable();
     id: number = this._listaTarea.length+1;
 
     public getListaTarea() {
@@ -34,14 +37,20 @@ export class TareaService {
   addTarea(tarea: Tarea) {
     tarea.id = this.id++;
     this._listaTarea.push(tarea)
+    this.tareasSubject.next(this._listaTarea)
   }
   deleteTareaByID(id: number){
     this._listaTarea = this._listaTarea.filter(p => p.id != id)
+    this.tareasSubject.next(this._listaTarea)
   }
   actualizarTarea(tarea: Tarea){
     var tareaActualizada = this._listaTarea.find(p => p.id == tarea.id)
-    tareaActualizada.nombre = tarea.nombre
-    tareaActualizada.tiempo = tarea.tiempo
+    if(tareaActualizada){
+      tareaActualizada.nombre = tarea.nombre
+      tareaActualizada.tiempo = tarea.tiempo
+      tareaActualizada.img = tarea.img
+    }   
+    this.tareasSubject.next(this._listaTarea)
   }
 
 }

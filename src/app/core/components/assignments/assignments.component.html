@@ -10,8 +10,8 @@
     <ion-img *ngIf="getTarea()?.img" [src]="getTarea().img"></ion-img>
   </ion-avatar>
   
-    <!-- <ion-label>{{getPersona()?.id}}: {{getPersona()?.nombre}}, {{getPersona()?.apellido}}</ion-label>
-    <ion-label>{{getTarea()?.id}}: {{getTarea()?.nombre}}, {{getTarea()?.tiempo}}</ion-label> -->
+    <ion-label>{{getPersona()?.apodo}} </ion-label>
+    <ion-label>{{getTarea()?.nombre}}: {{getTarea()?.tiempo}}</ion-label>
 
     <ion-label class="ion-text-center ion-text-wrap">{{assignment.dateTime | date:'short'}}</ion-label>
 

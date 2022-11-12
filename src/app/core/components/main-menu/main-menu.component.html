@@ -1,42 +1,41 @@
-
-  <ion-menu contentId="main-content">
+<ion-menu contentId="main-content">
     <ion-header>
-      <ion-toolbar color="tertiary">
-        <ion-title>Menu Content</ion-title>
-      </ion-toolbar>
+        <ion-toolbar color="tertiary">
+            <ion-title>Menu Content</ion-title>
+        </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-menu-toggle auto-hide="false">
-        <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/home']">
-          <ion-icon name="Home" slot="start"></ion-icon>
-          Home</ion-button><br>
-        <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/personas']">
-          <ion-icon name="people-circle-sharp" item-start></ion-icon>
-          PERSONAS</ion-button><br>
-        <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/tareas']">
-          <ion-icon name="list-circle-sharp" item-start class="iconos"></ion-icon>
-          TAREA</ion-button><br>
-        <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
-          <ion-icon name="receipt-sharp" item-start></ion-icon>
-          ASIGNAR TAREA</ion-button>
-        <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
-          <ion-icon name="clipboard-sharp" item-start></ion-icon>
-          VER TAREA</ion-button>
-      </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="false">
+            <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/home']">
+                <ion-icon name="Home" slot="start"></ion-icon>
+                Home</ion-button><br>
+            <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/personas']">
+                <ion-icon name="people-circle-sharp" item-start></ion-icon>
+                PERSONAS</ion-button><br>
+            <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/tareas']">
+                <ion-icon name="list-circle-sharp" item-start class="iconos"></ion-icon>
+                TAREA</ion-button><br>
+            <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
+                <ion-icon name="receipt-sharp" item-start></ion-icon>
+                ASIGNAR TAREA</ion-button>
+            <ion-button shape="default" color="medium" id="button-home" [routerLink]="['/asignar-tarea']">
+                <ion-icon name="clipboard-sharp" item-start></ion-icon>
+                VER TAREA</ion-button>
+        </ion-menu-toggle>
 
     </ion-content>
-  </ion-menu>
+</ion-menu>
 
-  <div class="ion-page" id="main-content">
+<div class="ion-page" id="main-content">
     <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title class="title_home"><span><strong><u>Asignacion de Tareas</u></strong></span></ion-title>
-      </ion-toolbar>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title class="title_home">Asignacion de Tareas</ion-title>
+        </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-router-outlet id="main-content"></ion-router-outlet>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
     </ion-content>
-  </div>
+</div>

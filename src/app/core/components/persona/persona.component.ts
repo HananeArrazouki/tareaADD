@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { PersonasService } from '../../services/personas.service';
 import { Persona } from '../../interfaces/persona';
 import { AlertController, ModalController } from '@ionic/angular';
@@ -9,7 +9,7 @@ import { PersonFormComponent } from '../form-person/form-person.component';
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.scss'],
 })
-export class PersonaComponent implements OnInit {
+export class PersonaComponent{
 
   private _persona : Persona
    
@@ -31,6 +31,10 @@ export class PersonaComponent implements OnInit {
   deletePersonById(id: number){
     console.log(id)
     return this.servicio.deletePersonById(id)
+  }
+
+  onDeletePeaple(person: Persona){
+    this.onDelete(person)
   }
 
   async onDelete(persona: Persona) {

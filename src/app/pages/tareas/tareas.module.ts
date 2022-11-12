@@ -6,15 +6,13 @@ import { TareasPageRoutingModule } from './tareas-routing.module';
 import { TareasPage } from './tareas.page';
 import { TareaComponent } from '../../core/components/tarea/tarea.component';
 import { FormTareaComponent } from '../../core/components/form-tarea/form-tarea.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ReactiveFormsModule,
+    CoreModule,
     TareasPageRoutingModule
   ],
-  declarations: [TareasPage, TareaComponent, FormTareaComponent]
+  declarations: [TareasPage]
 })
 export class TareasPageModule {}

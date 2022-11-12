@@ -5,14 +5,13 @@ import { IonicModule } from '@ionic/angular';
 import { AsignarTareaPageRoutingModule } from './asignar-tarea-routing.module';
 import { AsignarTareaPage } from './asignar-tarea.page';
 import { AssignmentsComponent } from 'src/app/core/components/assignments/assignments.component';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    CoreModule,
     AsignarTareaPageRoutingModule
   ],
-  declarations: [AsignarTareaPage, AssignmentsComponent]
+  declarations: [AsignarTareaPage]
 })
 export class AsignarTareaPageModule {}
