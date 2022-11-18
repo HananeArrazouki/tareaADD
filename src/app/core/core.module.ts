@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,6 +15,17 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { FormTareaComponent } from './components/form-tarea/form-tarea.component';
 
 import { DateTimeSelectableComponent } from './components/date-time-selectable/date-time-selectable.component';
+import es from '@angular/common/locales/es'
+import en from '@angular/common/locales/en'
+import { AssignmentScheduleComponent } from './components/assignment-schedule/assignment-schedule.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { createTranslateLoader } from './utils/translate';
+
+
+
+registerLocaleData(es)
+registerLocaleData(en)
 
 @NgModule({
   declarations: [
@@ -26,13 +37,22 @@ import { DateTimeSelectableComponent } from './components/date-time-selectable/d
         TaskSelectableComponent,
         PersonaComponent,
         TareaComponent,
-        AssignmentsComponent
+        AssignmentsComponent,
+        AssignmentScheduleComponent
       ],
   imports: [
     CommonModule, 
     IonicModule.forRoot(), 
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     CommonModule,
@@ -47,7 +67,20 @@ import { DateTimeSelectableComponent } from './components/date-time-selectable/d
     TaskSelectableComponent,   
     DateTimeSelectableComponent,
     AssignmentsComponent,
-    FormAssignmentComponent
+    FormAssignmentComponent,
+    AssignmentScheduleComponent,
+    HttpClientModule,
+    TranslateModule
+  ],
+  providers:[
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
+    },
+    // {
+    //   provide: LOCALE_ID,
+    //   useValue: 'en'
+    // },
   ]
 })
 export class CoreModule { }

@@ -1,8 +1,9 @@
 import { Component, Input} from '@angular/core';
 import { PersonasService } from '../../services/personas.service';
 import { Persona } from '../../interfaces/persona';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, IonAccordionGroup, ModalController } from '@ionic/angular';
 import { PersonFormComponent } from '../form-person/form-person.component';
+import { AssignmentService } from '../../services/assignment.service';
 
 @Component({
   selector: 'app-persona',
@@ -12,7 +13,8 @@ import { PersonFormComponent } from '../form-person/form-person.component';
 export class PersonaComponent{
 
   private _persona : Persona
-   
+  propagateChange = (_:any) => { }
+
   @Input('personas') set persona(persona: Persona){
     this._persona= persona;
   }
@@ -21,23 +23,27 @@ export class PersonaComponent{
     return this._persona;
   }
 
-  constructor(private servicio : PersonasService, private alertController: AlertController, private modalController: ModalController) { }
+  constructor(
+    private personService : PersonasService, 
+    private assignmentService : AssignmentService,
+    private alertController: AlertController, 
+    private modalController: ModalController) { }
 
   ngOnInit() {}
   
   getPersonas(){
-    return this.servicio.getPersonas();
+    return this.personService.getPersonas();
   }
   deletePersonById(id: number){
     console.log(id)
-    return this.servicio.deletePersonById(id)
+    return this.personService.deletePersonById(id)
   }
 
   onDeletePeaple(person: Persona){
     this.onDelete(person)
   }
 
-  async onDelete(persona: Persona) {
+  async onDelete(persona) {
     const alert = await this.alertController.create({
       header: '¿Are you sure you want to delete ' + persona.nombre + '?',
       buttons: [
@@ -51,7 +57,8 @@ export class PersonaComponent{
           text: 'Yes',
           role: 'confirm',
           handler: () => {
-            this.deletePersonById(persona.id)
+            this.hasAssignedTask(persona.id)
+            this.onPersonAssignedAlert(persona)
           },
         },
       ],
@@ -73,10 +80,10 @@ export class PersonaComponent{
       if(result && result.data){
         switch(result.data.mode){
           case 'New':
-            this.servicio.addPerson(result.data.persona);
+            this.personService.addPerson(result.data.persona);
             break;
           case 'Edit':
-            this.servicio.actualizarPerson(result.data.persona);
+            this.personService.actualizarPerson(result.data.persona);
             break;
           default:
         }
@@ -87,4 +94,45 @@ export class PersonaComponent{
   onEditPerson(persona: Persona){
     this.presentPersonForm(persona)
   }
+
+  onPersonClick(person: Persona, accordion: IonAccordionGroup) {
+    this._persona = person;
+    accordion.value = '';
+    this.propagateChange(this._persona.id); 
+  }
+
+
+  hasAssignedTask(personId: number): boolean{
+    if(this.assignmentService.getAssignments().find(asig => asig.personaId == personId)){
+      return true
+    }else {
+      return false
+    }   
+  }
+
+  onDeletePerson(person: Persona) {
+    if (!this.hasAssignedTask(person.id)) {
+      this.onDelete(person);
+    } else {
+      this.onPersonAssignedAlert(person);
+    }
+  }
+
+  async onPersonAssignedAlert(person) {
+    const alert = await this.alertController.create({
+      header: 'ADVERTENCIA',
+      message: 'No se puede borrar esa persona porque tiene tarea asignada',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'close',
+          handler: () => { },
+        },
+      ],
+    });
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+  }
+
+  
 }

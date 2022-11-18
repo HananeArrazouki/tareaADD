@@ -5,6 +5,7 @@ import { Persona } from '../../core/interfaces/persona';
 import { AssignmentService } from 'src/app/core/services/assignment.service';
 import { PersonasService } from '../../core/services/personas.service'
 import { isLowResolution } from 'src/app/core/utils/screen';
+import { Assignment } from 'src/app/core/interfaces/assignment';
 
 @Component({
   selector: 'app-personas',
@@ -14,7 +15,7 @@ import { isLowResolution } from 'src/app/core/utils/screen';
 export class PersonasPage{
 
   isLowRes = isLowResolution
-  mode: "Normal" | "Edit" | "Organize" = "Normal";
+  mode: "Normal" | "Edit" = "Normal";
 
   constructor(
     private personService : PersonasService,
@@ -30,13 +31,8 @@ export class PersonasPage{
     return this.personService.getPersonaById(id);
   }
 
-  addPerson(person: Persona) {
-    this.personService.addPerson(person)
-  }
-
-  deletePersonById(id: number){
-    console.log(id)
-    return this.personService.deletePersonById(id)
+  onNewPerson(){
+    this.presentPersonForm(null)
   }
 
   async presentPersonForm(persona:Persona){
@@ -60,60 +56,6 @@ export class PersonasPage{
         }
       }
     });
-  }
-
-  async onDelete(persona: Persona) {
-    const alert = await this.alertController.create({
-      header: '¿Are you sure you want to delete ' + persona.nombre + '?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {
-          },
-        },
-        {
-          text: 'Yes',
-          role: 'confirm',
-          handler: () => {
-            this.deletePersonById(persona.id)
-          },
-        },
-      ],
-    });
-
-    await alert.present();
-  }
-  async onPersonExistsAlert(task) {
-    const alert = await this.alertController.create({
-      header: 'ADVERTENCIA',
-      message: 'No se puede borrar esa persona porque tiene tarea asignada',
-      buttons: [
-        {
-          text: 'Cerrar',
-          role: 'close',
-          handler: () => { },
-        },
-      ],
-    });
-    await alert.present();
-    const { role } = await alert.onDidDismiss();
-  }
-
-  onNewPerson(){
-    this.presentPersonForm(null)
-  }
-
-  onEditPerson(person: Persona){
-    this.presentPersonForm(person)
-  }
-  
-  onDeletePerson(person: Persona) {
-    if (!this.onPersonExistsAlert(person.id)) {
-      this.onDelete(person);
-    } else {
-      this.onPersonExistsAlert(person);
-    }
   }
 
 }

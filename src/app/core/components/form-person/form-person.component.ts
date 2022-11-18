@@ -31,7 +31,7 @@ export class PersonFormComponent {
       id: [null],
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
-      edad: ['', [Validators.required]],
+      edad: ['',[]],
       apodo: ['', [Validators.required]],
       img: ['']
     });

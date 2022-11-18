@@ -1,0 +1,24 @@
+{
+   "home": {
+      "title": "Gestion de tareas",
+      "langButton": "Cambiar Idioma"
+   },
+   "people": {
+      "name": "introduce tu nombre: ",
+      "lastName": "introduce tus apellidos: ",
+      "nickname": "introduce tu apodo: "
+   },
+   "form": {
+      "name": "nombre",
+      "lastName": "apellido",
+      "nickname": "apodo ",
+      "task": ""
+   },
+   "modal": {
+      "new": "nuevo",
+      "modify": "modificar",
+      "add": "añadir",
+      "addPerosn": "añadir persona",
+      "modifyPerson": "Modificar persona"
+   }
+}

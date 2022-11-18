@@ -53,7 +53,7 @@ export class PersonSelectableComponent  implements ControlValueAccessor{
   onPersonClick(person: Persona, accordion: IonAccordionGroup) {
     this.personSelected = person;
     accordion.value = '';
-    this.propagateChange(this.personSelected.id); // Propagates the new ID
+    this.propagateChange(this.personSelected.id); 
   }
 
 

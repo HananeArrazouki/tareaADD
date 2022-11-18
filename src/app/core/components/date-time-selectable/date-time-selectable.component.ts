@@ -1,6 +1,8 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
+import * as moment from 'moment';
+import { BehaviorSubject } from 'rxjs';
 import { Persona } from '../../interfaces/persona';
 
 const DATETIME_PROFILE_VALUE_ACCESSOR: any = {
@@ -15,29 +17,50 @@ const DATETIME_PROFILE_VALUE_ACCESSOR: any = {
   styleUrls: ['./date-time-selectable.component.scss'],
   providers: [DATETIME_PROFILE_VALUE_ACCESSOR]
 })
-export class DateTimeSelectableComponent implements OnInit {
+export class DateTimeSelectableComponent implements ControlValueAccessor, OnDestroy {
   
   isDisabled: boolean;
   selectedDateTime: any;
   propagateChange = (_:any) => { }
   peopleSvc: any;
-  personSelected: Persona = null;
+  hasValue : Boolean = false
+  // personSelected: Persona = null;
+
+  private dateSubject = new BehaviorSubject(this.formatDate(moment()))
+  public date$ = this.dateSubject.asObservable();
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnDestroy(): void {
+    this.dateSubject.complete();
+  }
 
   writeValue(obj: any): void{
-    this.selectedDateTime = obj;
+    if(obj){
+      this.hasValue = true;
+      this.dateSubject.next(this.formatDate(moment(obj)))
+    } 
   }
+
+  formatDate(date:moment.Moment){
+    return date.format('YYYY-MM-DDTHH:mmZ')
+  }
+
   serDisabledState?(isDisabled: boolean): void{
     this.isDisabled = isDisabled;
   }
- 
+  
   onDateTimeChanged(event, accordion:IonAccordionGroup){
-    this.selectedDateTime = event.detail.value;
-    accordion.value = '';
-    this.propagateChange(this.selectedDateTime)
+    setTimeout(() => {
+      var value = this.formatDate(moment(event.detail.value));
+      if(value != this.dateSubject.getValue()){
+        this.hasValue = true;
+        this.dateSubject.next(value);
+        accordion.value = '';
+        this.propagateChange(value)
+      }
+    }, 100)
+    //this.selectedDateTime = event.detail.value;    
   }
 
   registerOnChange(fn: any): void {
@@ -48,17 +71,19 @@ export class DateTimeSelectableComponent implements OnInit {
     return this.peopleSvc.getPeople();
   }
 
-  onPersonClicked(person: Persona, accordion: IonAccordionGroup){
-    this.personSelected = person
-    accordion.value = '';
-    this.propagateChange(this.personSelected.id);
-  }
+  // onPersonClicked(person: Persona, accordion: IonAccordionGroup){
+  //   this.personSelected = person
+  //   accordion.value = '';
+  //   this.propagateChange(this.personSelected.id);
+  // }
 
   registerOnTouched(fn: any): void{}
 
   onCancel(datetime:IonDatetime, accordion:IonAccordionGroup){
       datetime.cancel();
+      accordion.value=''
   }
+  
   onConfirm(datetime: IonDatetime, accordion){
     datetime.confirm();
   }

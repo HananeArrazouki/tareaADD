@@ -1,0 +1,24 @@
+{
+   "home": {
+      "title": "Task Management",
+      "langButton": "Change language"
+   },
+   "people": {
+      "name": "enter your name: ",
+      "lastName": "enter your last name: ",
+      "nickname": "enter your nickname: "
+   },
+   "form": {
+      "name": "name",
+      "lastName": "last name ",
+      "nickname": "nickname ",
+      "task": ""
+   },
+   "modal": {
+      "new": "new",
+      "modify": "modify",
+      "add": "add",
+      "addPerosn": "add person",
+      "modifyPerson": "Modify person"
+   }
+}

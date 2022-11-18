@@ -1,7 +1,9 @@
 <ion-menu contentId="main-content">
+    
     <ion-header>
         <ion-toolbar color="tertiary">
-            <ion-title>Menu Content</ion-title>
+            <ion-title>{{'home.title' | translate}}</ion-title>
+            <ion-button (click)="onLanguage()" > english | español</ion-button>
         </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
@@ -25,6 +27,7 @@
 
     </ion-content>
 </ion-menu>
+
 
 <div class="ion-page" id="main-content">
     <ion-header>

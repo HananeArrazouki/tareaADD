@@ -25,6 +25,8 @@
     "@capacitor/keyboard": "4.0.1",
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "@types/moment": "^2.13.0",
     "@types/moment-timezone": "^0.5.30",
     "ionicons": "^6.0.3",

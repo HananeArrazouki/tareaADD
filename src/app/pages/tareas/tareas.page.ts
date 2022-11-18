@@ -14,7 +14,7 @@ import { isLowResolution } from 'src/app/core/utils/screen';
 export class TareasPage {
 
   isLowRes = isLowResolution
-  mode: "Normal" | "Edit" | "Organize" = "Normal";
+  mode: "Normal" | "Edit" = "Normal";
 
   constructor(
     private taskService : TareaService,
@@ -84,7 +84,7 @@ export class TareasPage {
 
     await alert.present();
   }
-  async onTaskExistsAlert(task) {
+  async onTaskExistsAlert(person) {
     const alert = await this.alertController.create({
       header: 'ADVERTENCIA',
       message: 'No se puede borrar esa persona porque tiene tarea asignada',

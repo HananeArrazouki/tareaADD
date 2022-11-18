@@ -12,6 +12,10 @@ import { PersonSelectableComponent } from './core/components/person-selectable/p
 import { TaskSelectableComponent } from './core/components/task-selectable/task-selectable.component';
 import { DateTimeSelectableComponent } from './core/components/date-time-selectable/date-time-selectable.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { createTranslateLoader } from './core/utils/translate';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -22,7 +26,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule,],
+    AppRoutingModule,
+    CoreModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })],
   providers: [{ 
     provide: RouteReuseStrategy, 
     useClass: IonicRouteStrategy }],
