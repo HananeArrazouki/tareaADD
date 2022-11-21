@@ -9,7 +9,7 @@
           <img [src]="personSelected.img" />
         </ion-avatar>
         <ion-label>{{personSelected?.nombre}} {{personSelected?.apellido}}</ion-label>
-        <ion-label *ngIf="!personSelected">Select a person</ion-label>
+        <ion-label *ngIf="!personSelected">{{'selectables.selectPerson' | translate}}</ion-label>
       </ng-container>
     </ion-item>
     <div class="ion-padding" slot="content">

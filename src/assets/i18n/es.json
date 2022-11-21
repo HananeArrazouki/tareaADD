@@ -4,21 +4,58 @@
       "langButton": "Cambiar Idioma"
    },
    "people": {
-      "name": "introduce tu nombre: ",
-      "lastName": "introduce tus apellidos: ",
-      "nickname": "introduce tu apodo: "
+      "name": "Introduce el nombre: ",
+      "lastName": "Introduce los apellidos: ",
+      "nickname": "Introduce el apodo: "
    },
-   "form": {
-      "name": "nombre",
-      "lastName": "apellido",
-      "nickname": "apodo ",
-      "task": ""
+   "peopleForm": {
+      "name": "Nombre",
+      "lastName": "Apellido",
+      "nickname": "Apodo "
    },
+   "tasks": {
+      "name": "Introduce la tarea: ",
+      "time": "El tiempo: "
+   },
+   "tasksForm": {
+      "name": "Nombre",
+      "time": "Tiempo"
+   },
+   
    "modal": {
       "new": "nuevo",
       "modify": "modificar",
       "add": "añadir",
-      "addPerosn": "añadir persona",
-      "modifyPerson": "Modificar persona"
+      "delete": "Borrar",
+      "addPerson": "añadir persona",
+      "modifyPerson": "Modificar persona",
+      "dropPerson": "Borrar persona",
+      "addAssignment": "añadir asignación",
+      "modifyAssignment": "Modificar asignación",
+      "dropAssignment": "Borrar asignación",
+      "addTask": "añadir tarea",
+      "modifyTask": "Modificar tarea",
+      "dropTask": "Borrar tarea",
+      "close": "Cerrar",
+      "Confirm": "Confirmar",
+      "cancel": "Cancelar",
+      "date": "Selecciona Fecha y Hora"
+   },
+   "messages": {
+      "onDeleteMessage": "Estas seguro de que quieres borrar",
+      "onPersonAssignedAlertMessage": "No se puede borrar esa persona porque tiene tarea asignada"
+   },
+
+   "menu": {
+      "home": "Inicio",
+      "managePeople": "Gestionar Personas",
+      "manageTasks": "Gestionar Tarea",
+      "tasksAssign": "Asignación de Tareas",
+      "viewAssignedTasks": "Ver Tarea Asignada"
+   },
+   "salactables": {
+      "selectPerson": "Selecciona la persona",
+      "selectTask": "Selecciona la tarea"
    }
+   
 }

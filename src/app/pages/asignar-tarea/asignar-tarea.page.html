@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>AsignarTarea</ion-title>
+    <ion-title>AssignTask</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,6 +16,5 @@
   *ngFor="let assignment of (getAssignments() | async)" 
   [assignment]="assignment" (onDelete)="onDeleteAssignment(assignment)" (onEdit)="onEditAssignment(assignment)"></app-assignments>
   
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <ion-button shape="round" color="medium" id="button-" [routerLink]="['/home']">Volver</ion-button><br>
+  <br>
 </ion-content>

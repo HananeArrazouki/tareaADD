@@ -17,11 +17,11 @@
 
     <ion-icon name="swap-horizontal" *ngIf="isLowResolution()"></ion-icon>
     <ion-button *ngIf="!isLowResolution()" slot="end" fill="clear" (click)="onEditClick(sliding)" expand="block" fill="clear" shape="round">
-      <ion-icon  name="create-sharp">Modificar</ion-icon>
+      <ion-icon  name="create-sharp"></ion-icon>
     </ion-button>
     
     <ion-button *ngIf="!isLowResolution()" slot="end" fill="clear" (click)="onDeleteClick(sliding)" expand="block" fill="clear" shape="round">
-      <ion-icon  name="trash-sharp">Borrar</ion-icon>
+      <ion-icon  name="trash-sharp"></ion-icon>
     </ion-button>
 
   </ion-item>

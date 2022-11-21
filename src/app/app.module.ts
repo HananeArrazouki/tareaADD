@@ -28,6 +28,7 @@ import { CoreModule } from './core/core.module';
     IonicModule.forRoot(), 
     AppRoutingModule,
     CoreModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

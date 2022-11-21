@@ -1,8 +1,8 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>{{mode=="New"?"Add assignment":"Modify assignment"}}</ion-title>
+        <ion-title>{{(mode=="New"?"modal.addAssignment":"modal.modifyAssignment") | translate}}</ion-title>
         <ion-buttons slot="end">
-            <ion-button (click)="onDismiss(null)">Close</ion-button>
+            <ion-button (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
         <app-person-selectable formControlName="personId"></app-person-selectable>
         <app-task-selectable formControlName="taskId"></app-task-selectable>
         <app-date-time-selectable formControlName="dateTime"></app-date-time-selectable>
-        <ion-button [disabled]="!form.valid" type="submit">{{mode=="New"?"Añadir":"Modificar"}}</ion-button>
+        <ion-button [disabled]="!form.valid" type="submit">{{(mode=="New"?"modal.add":"modal.modify") | translate}}</ion-button>
 
     </form>
 </ion-content>

@@ -9,7 +9,7 @@
           <img [src]="taskSelected.img" />
         </ion-avatar>
         <ion-label>{{taskSelected?.nombre}}</ion-label>
-        <ion-label *ngIf="!taskSelected">Select a task</ion-label>
+        <ion-label *ngIf="!taskSelected">{{'selectables.selectTask' | translate}}</ion-label>
       </ng-container>
     </ion-item>
     <div class="ion-padding" slot="content">

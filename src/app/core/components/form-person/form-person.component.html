@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{(mode=="New"?"modal.addPerosn":"modal.modifyPerson") | translate}}</ion-title>
+    <ion-title>{{(mode=="New"?"modal.addPerson":"modal.modifyPerson") | translate}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss()">Close</ion-button>
+      <ion-button (click)="onDismiss()">{{'modal.close' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -10,16 +10,16 @@
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
-      <ion-label position="floating">{{'form.name' | translate}}</ion-label>
-      <ion-input type="text" placeholder="{{'people.name' | translate}}" formControlName="nombre"></ion-input>
+      <ion-label position="floating">{{'peopleForm.name' | translate}}</ion-label>
+      <ion-input type="text" placeholder="{{'people.name' | translate}}" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">{{'form.lastName' | translate}}</ion-label>
-      <ion-input type="text" placeholder="{{'people.lastName' | translate}}" formControlName="apellido"></ion-input>
+      <ion-label position="floating">{{'peopleForm.lastName' | translate}}</ion-label>
+      <ion-input type="text" placeholder="{{'people.lastName' | translate}}" formControlName="lask name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">{{'form.nickname' | translate}}</ion-label>
-      <ion-input type="text" placeholder="{{'people.nickname' | translate}}" formControlName="apodo"></ion-input>
+      <ion-label position="floating">{{'peopleForm.nickname' | translate}}</ion-label>
+      <ion-input type="text" placeholder="{{'people.nickname' | translate}}" formControlName="nick name"></ion-input>
     </ion-item>
     <ion-button [disabled]="!form.valid" type="submit">{{(mode=="New"?"modal.add":"modal.modify") | translate}}</ion-button>
   </form>

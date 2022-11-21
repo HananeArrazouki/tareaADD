@@ -4,21 +4,59 @@
       "langButton": "Change language"
    },
    "people": {
-      "name": "enter your name: ",
-      "lastName": "enter your last name: ",
-      "nickname": "enter your nickname: "
+      "name": "Enter your name: ",
+      "lastName": "Enter your last name: ",
+      "nickname": "Enter your nickname: "
    },
-   "form": {
-      "name": "name",
-      "lastName": "last name ",
-      "nickname": "nickname ",
+   "peopleForm": {
+      "name": "Name",
+      "lastName": "Last name ",
+      "nickname": "Nickname ",
       "task": ""
    },
+
+   "tasks": {
+      "name": "Enter the task: ",
+      "time": "The Time: "
+   },
+   "tasksForm": {
+      "name": "Name",
+      "time": "Time"
+   },
+
    "modal": {
       "new": "new",
       "modify": "modify",
       "add": "add",
-      "addPerosn": "add person",
-      "modifyPerson": "Modify person"
+      "delete": "delete",
+      "addPerson": "add person",
+      "modifyPerson": "Modify person",
+      "dropPerson": "delete person",
+      "addTask": "add task",
+      "modifyTask": "Modify task",
+      "dropTask": "delete task",
+      "addAssignment": "add assignment",
+      "modifyAssignment": "Modify assignment",
+      "dropAssignment": "delete assignment",
+      "close": "Close",
+      "Confirm": "Confirm",
+      "cancel": "Cancel",
+      "date": "Select Date and Time"
+   },
+   "messages": {
+      "onDeleteMessage": "Are you sure you want to delete",
+      "onPersonAssignedAlertMessage": "It could not delete this person because he has a task assigned."
+   },
+
+   "menu": {
+      "home": "Home",
+      "managePeople": "Manage People",
+      "manageTasks": "Manage Tasks",
+      "tasksAssign": "Task Assign",
+      "viewAssignedTasks": "View Assigned Tasks"
+   },
+   "salactables": {
+      "selectPerson": "Select the Person",
+      "selectTask": "Selecciona the Task"
    }
 }
