@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonItemSliding, ModalController } from '@ionic/angular';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IonItemSliding } from '@ionic/angular';
 import { Assignment } from '../../interfaces/assignment';
 import { Persona } from '../../interfaces/persona';
 import { Tarea } from '../../interfaces/tarea';

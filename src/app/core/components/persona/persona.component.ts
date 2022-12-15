@@ -29,7 +29,6 @@ export class PersonaComponent{
     private alertController: AlertController, 
     private modalController: ModalController) { }
 
-  ngOnInit() {}
   
   getPersonas(){
     return this.personService.getPersonas();

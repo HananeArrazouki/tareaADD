@@ -39,10 +39,12 @@ export class PersonasService {
     this._personas.push(persona)
     this._personasSubject.next(this._personas)
   }
+
   deletePersonById(id: number){
     this._personas = this._personas.filter(p => p.id != id)
     this._personasSubject.next(this._personas)
   }
+  
   actualizarPerson(persona: Persona){
     var personaActualizada = this._personas.find(p => p.id == persona.id)
     if(personaActualizada){

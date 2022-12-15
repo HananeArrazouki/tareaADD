@@ -2,10 +2,8 @@ import { Component} from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
 import { PersonFormComponent } from '../../core/components/form-person/form-person.component';
 import { Persona } from '../../core/interfaces/persona';
-import { AssignmentService } from 'src/app/core/services/assignment.service';
 import { PersonasService } from '../../core/services/personas.service'
 import { isLowResolution } from 'src/app/core/utils/screen';
-import { Assignment } from 'src/app/core/interfaces/assignment';
 
 @Component({
   selector: 'app-personas',
@@ -18,9 +16,7 @@ export class PersonasPage{
   mode: "Normal" | "Edit" = "Normal";
 
   constructor(
-    private personService : PersonasService,
-    private assignmentService : AssignmentService,
-    private alertController : AlertController, 
+    private personService : PersonasService, 
     private modalController: ModalController) { }
 
   getPersonas(){
